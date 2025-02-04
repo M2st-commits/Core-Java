@@ -15,3 +15,4 @@ class PalindromeNumber {
         System.out.println(isPalindrome(x));
     }
 }
+//}
