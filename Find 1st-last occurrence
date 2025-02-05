@@ -1,34 +1,30 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class FindOccurrences {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter the size of the array: ");
-        int size = scanner.nextInt();
-        int[] arr = new int[size];
-        
-        System.out.println("Enter the elements of the array: ");
-        for (int i = 0; i < size; i++) {
-            arr[i] = scanner.nextInt();
-        }
-        
-        System.out.print("Enter the target element: ");
-        int target = scanner.nextInt();
-        
-        int[] result = findFirstLastOccurrence(arr, target);
-        System.out.println("First and Last Occurrence: " + Arrays.toString(result));
-    }
-
-    public static int[] findFirstLastOccurrence(int[] arr, int target) {
-        int first = -1, last = -1;
+public class FindOccurrence {
+    public static void Occurrence(int arr[], int target) {
+        int first = -1;
+        int last = -1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
-                if (first == -1) first = i;
+                if (first == -1) {
+                    first = i;
+                }
                 last = i;
             }
         }
-        return new int[]{first, last};
+        System.out.println("First occurrence: " + first);
+        System.out.println("Last occurrence: " + last);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int target = sc.nextInt();
+        Occurrence(arr, target);
+        sc.close();
     }
 }
